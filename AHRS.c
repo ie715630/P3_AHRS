@@ -5,4 +5,5 @@
  *      Author: sergio_mndz
  */
 
-
+#include "AHRS.h"
+#include "math.h"
