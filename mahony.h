@@ -17,9 +17,9 @@
 // Variable declaration
 typedef struct
 {
-	float roll;
-	float pitch;
-	float yaw;
+    float roll;
+    float pitch;
+    float yaw;
 }MahonyAHRSEuler_t;
 //---------------------------------------------------------------------------------------------------
 // Function declarations

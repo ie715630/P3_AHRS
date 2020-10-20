@@ -43,9 +43,9 @@
 #define AHRS_IMU_SAMPLE_TIME 	20
 
 typedef struct {
-	int16_t x;
-	int16_t y;
-	int16_t z;
+    int16_t x;
+    int16_t y;
+    int16_t z;
 }bmi160_raw_data_t;
 
 typedef enum {
@@ -55,9 +55,9 @@ typedef enum {
 
 typedef struct
 {
-	SemaphoreHandle_t mutex_ADQUISITION_freertos;
-	SemaphoreHandle_t mutex_SEND_UART_freertos;
-	EventGroupHandle_t event_FreeRTOs;
+    SemaphoreHandle_t mutex_ADQUISITION_freertos;
+    SemaphoreHandle_t mutex_SEND_UART_freertos;
+    EventGroupHandle_t event_FreeRTOs;
 } parameters_task_t;
 
 /* Inicialización de BMI160 */

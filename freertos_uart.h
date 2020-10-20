@@ -12,33 +12,33 @@
 
 typedef enum
 {
-  freertos_uart0,
-  freertos_uart1
+    freertos_uart0,
+    freertos_uart1
 } freertos_uart_number_t;
 
 typedef enum
 {
-  freertos_uart_portA,
-  freertos_uart_portB,
-  freertos_uart_portC,
-  freertos_uart_portD,
-  freertos_uart_portE
+    freertos_uart_portA,
+    freertos_uart_portB,
+    freertos_uart_portC,
+    freertos_uart_portD,
+    freertos_uart_portE
 } freertos_uart_port_t;
 
 typedef enum
 {
-  freertos_uart_sucess,
-  freertos_uart_fail
+    freertos_uart_sucess,
+    freertos_uart_fail
 } freertos_uart_flag_t;
 
 typedef struct
 {
-	uint32_t baudrate;
-	freertos_uart_number_t uart_number;
-	freertos_uart_port_t port;
-	uint8_t rx_pin;
-	uint8_t tx_pin;
-	uint8_t pin_mux;
+    uint32_t baudrate;
+    freertos_uart_number_t uart_number;
+    freertos_uart_port_t port;
+    uint8_t rx_pin;
+    uint8_t tx_pin;
+    uint8_t pin_mux;
 } freertos_uart_config_t;
 
 freertos_uart_flag_t freertos_uart_init(freertos_uart_config_t config);
