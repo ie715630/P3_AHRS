@@ -19,26 +19,24 @@
 #include "freertos_uart.h"
 #include "mahony.h"
 
-#define acc_range 2	// rango de 2g
-#define acc_max_val 32768	// INT16 con signo
-#define gyr_range 2000	// rango de 2000°/s
-#define gyr_max_val 32768	// INT16 con signo
+#define acc_range 2.0	// rango de 2g
+#define acc_max_val 32768.0	// INT16 con signo
+#define gyr_range 2000.0	// rango de 2000°/s
+#define gyr_max_val 32768.0	// INT16 con signo
 
 #define HEADER_VAL 0xAAAAAAAA
-#define AHRS_IMU_SAMPLE_TIME 20			// 10 ms - f= 100 Hz
-//#define EVENT_MUESTRASREADY (1 << 0)
 
 typedef struct {
-	uint32_t header;
-	float x;
-	float y;
-	float z;
+    uint32_t header;
+    float x;
+    float y;
+    float z;
 }comm_msg_t;
 
 typedef struct{
-	float x;
-	float y;
-	float z;
+    float x;
+    float y;
+    float z;
 }bmi160_float_data_t;
 
 bmi160_float_data_t float_conversion_gyr(bmi160_raw_data_t data);
