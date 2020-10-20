@@ -39,6 +39,10 @@ typedef struct{
 	float x;
 	float y;
 	float z;
-}BMI160_float_data_t;
+}bmi160_float_data_t;
+
+bmi160_float_data_t float_conversion_gyr(bmi160_raw_data_t data);
+
+bmi160_float_data_t float_conversion_acc(bmi160_raw_data_t data);
 
 #endif /* P3_AHRS_AHRS_H_ */
