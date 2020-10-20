@@ -28,3 +28,20 @@ bmi160_float_data_t float_conversion_acc(bmi160_raw_data_t data)
 	return acc_converted_data;
 }
 
+comm_msg_t  data_conversion_nav(void)
+{
+	bmi160_raw_data_t acc_data;
+	bmi160_raw_data_t gyr_data;
+	MahonyAHRSEuler_t local_euler;
+	comm_msg_t data_message;
+
+	acc_data = bmi160_i2c_read_acc();
+	gyr_data = bmi160_i2c_read_gyr();
+	local_euler = MahonyAHRSupdateIMU(gyr_data.x, gyr_data.y, gyr_data.z,
+									acc_data.x, acc_data.y, acc_data.z);
+	data_message.header = HEADER_VAL;
+	data_message.x = local_euler.roll;
+	data_message.y = local_euler.pitch;
+	data_message.z = local_euler.yaw;
+	return data_message;
+}
